@@ -2,9 +2,10 @@ package attractions;
 
 import behaviours.IReviewed;
 import behaviours.ISecurity;
+import behaviours.ITicketed;
 import people.Visitor;
 
-public class RollerCoaster  extends Attraction implements ISecurity, IReviewed {
+public class RollerCoaster  extends Attraction implements ISecurity, IReviewed, ITicketed {
 
     public RollerCoaster(String name, int rating) {
         super(name, rating);
@@ -18,5 +19,15 @@ public class RollerCoaster  extends Attraction implements ISecurity, IReviewed {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public double priceFor(Visitor visitor) {
+        return 0;
+    }
+
+    @Override
+    public double defaultPrice() {
+        return 0;
     }
 }
